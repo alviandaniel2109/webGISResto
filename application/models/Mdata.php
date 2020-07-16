@@ -10,7 +10,7 @@ class Mdata extends CI_Model
 		$this->load->library(array('upload','session'));
 	}
 
-	function tampil_cafe($keyword, $jenis, $harga, $kapasitas, $waktu)
+	function tampil_cafe($keyword, $jenis, $harga, $kapasitas, $waktu, $jarak)
 	{
 		$this->db->select('*');
 		$this->db->from('resto');
@@ -79,6 +79,20 @@ class Mdata extends CI_Model
 					$this->db->where('JAM_BUKA = ', '00:00');
 				}
 			}
+
+			if ($jarak != "") {
+				if($jarak == "1") {
+					$this->db->where('JARAK <= ', '2');
+				}else if($jarak == "2"){
+					$this->db->where('JARAK >= ', '2');
+					$this->db->where('JARAK <= ', '5');
+				}else if($jarak == "3"){
+					$this->db->where('JARAK >= ', '5');
+					$this->db->where('JARAK <= ', '10');
+				}else{
+					$this->db->where('JARAK >= ', '10');
+				}
+			}
 		}
 
 		$query = $this->db->get();
@@ -86,7 +100,7 @@ class Mdata extends CI_Model
 		return $query;
 	}
 
-	function tampil_qsr($keyword, $jenis, $harga, $kapasitas, $waktu)
+	function tampil_qsr($keyword, $jenis, $harga, $kapasitas, $waktu, $jarak)
 	{
 		$this->db->select('*');
 		$this->db->from('resto');
@@ -155,6 +169,20 @@ class Mdata extends CI_Model
 					$this->db->where('JAM_BUKA = ', '00:00');
 				}
 			}
+
+			if ($jarak != "") {
+				if($jarak == "1") {
+					$this->db->where('JARAK <= ', '2');
+				}else if($jarak == "2"){
+					$this->db->where('JARAK >= ', '2');
+					$this->db->where('JARAK <= ', '5');
+				}else if($jarak == "3"){
+					$this->db->where('JARAK >= ', '5');
+					$this->db->where('JARAK <= ', '10');
+				}else{
+					$this->db->where('JARAK >= ', '10');
+				}
+			}
 		}
 
 		$query = $this->db->get();
@@ -162,7 +190,7 @@ class Mdata extends CI_Model
 		return $query;
 	}
 
-	function tampil_bakery($keyword, $jenis, $harga, $kapasitas, $waktu)
+	function tampil_bakery($keyword, $jenis, $harga, $kapasitas, $waktu, $jarak)
 	{
 		$this->db->select('*');
 		$this->db->from('resto');
@@ -231,6 +259,20 @@ class Mdata extends CI_Model
 					$this->db->where('JAM_BUKA = ', '00:00');
 				}
 			}
+
+			if ($jarak != "") {
+				if($jarak == "1") {
+					$this->db->where('JARAK <= ', '2');
+				}else if($jarak == "2"){
+					$this->db->where('JARAK >= ', '2');
+					$this->db->where('JARAK <= ', '5');
+				}else if($jarak == "3"){
+					$this->db->where('JARAK >= ', '5');
+					$this->db->where('JARAK <= ', '10');
+				}else{
+					$this->db->where('JARAK >= ', '10');
+				}
+			}
 		}
 
 		$query = $this->db->get();
@@ -238,7 +280,7 @@ class Mdata extends CI_Model
 		return $query;
 	}
 
-	function tampil_eskrim($keyword, $jenis, $harga, $kapasitas, $waktu)
+	function tampil_eskrim($keyword, $jenis, $harga, $kapasitas, $waktu, $jarak)
 	{
 		$this->db->select('*');
 		$this->db->from('resto');
@@ -307,6 +349,20 @@ class Mdata extends CI_Model
 					$this->db->where('JAM_BUKA = ', '00:00');
 				}
 			}
+
+			if ($jarak != "") {
+				if($jarak == "1") {
+					$this->db->where('JARAK <= ', '2');
+				}else if($jarak == "2"){
+					$this->db->where('JARAK >= ', '2');
+					$this->db->where('JARAK <= ', '5');
+				}else if($jarak == "3"){
+					$this->db->where('JARAK >= ', '5');
+					$this->db->where('JARAK <= ', '10');
+				}else{
+					$this->db->where('JARAK >= ', '10');
+				}
+			}
 		}
 
 		$query = $this->db->get();
@@ -314,7 +370,7 @@ class Mdata extends CI_Model
 		return $query;
 	}
 
-	function tampil_pubs($keyword, $jenis, $harga, $kapasitas, $waktu)
+	function tampil_pubs($keyword, $jenis, $harga, $kapasitas, $waktu, $jarak)
 	{
 		$this->db->select('*');
 		$this->db->from('resto');
@@ -383,6 +439,20 @@ class Mdata extends CI_Model
 					$this->db->where('JAM_BUKA = ', '00:00');
 				}
 			}
+
+			if ($jarak != "") {
+				if($jarak == "1") {
+					$this->db->where('JARAK <= ', '2');
+				}else if($jarak == "2"){
+					$this->db->where('JARAK >= ', '2');
+					$this->db->where('JARAK <= ', '5');
+				}else if($jarak == "3"){
+					$this->db->where('JARAK >= ', '5');
+					$this->db->where('JARAK <= ', '10');
+				}else{
+					$this->db->where('JARAK >= ', '10');
+				}
+			}
 		}
 
 		$query = $this->db->get();
@@ -390,7 +460,7 @@ class Mdata extends CI_Model
 		return $query;
 	}
 
-	function tampil_cdr($keyword, $jenis, $harga, $kapasitas, $waktu)
+	function tampil_cdr($keyword, $jenis, $harga, $kapasitas, $waktu, $jarak)
 	{
 		$this->db->select('*');
 		$this->db->from('resto');
@@ -457,6 +527,20 @@ class Mdata extends CI_Model
 					$this->db->where('JAM_BUKA <= ', '23:00');
 				}else{
 					$this->db->where('JAM_BUKA = ', '00:00');
+				}
+			}
+
+			if ($jarak != "") {
+				if($jarak == "1") {
+					$this->db->where('JARAK <= ', '2');
+				}else if($jarak == "2"){
+					$this->db->where('JARAK >= ', '2');
+					$this->db->where('JARAK <= ', '5');
+				}else if($jarak == "3"){
+					$this->db->where('JARAK >= ', '5');
+					$this->db->where('JARAK <= ', '10');
+				}else{
+					$this->db->where('JARAK >= ', '10');
 				}
 			}
 		}

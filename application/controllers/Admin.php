@@ -34,9 +34,11 @@ class Admin extends CI_Controller
 		$this->form_validation->set_rules('buka', 'Buka', 'trim|required');
 		$this->form_validation->set_rules('tutup', 'Tutup', 'trim|required');
 		$this->form_validation->set_rules('kapasitas', 'Kapasitas', 'trim|required');
+		$this->form_validation->set_rules('harian', 'Pengunjung Harian', 'trim|required');
 		$this->form_validation->set_rules('cp', 'Contact Person', 'trim|required');
 		$this->form_validation->set_rules('latitude', 'Latitude', 'trim|required');
 		$this->form_validation->set_rules('longitude', 'Longitude', 'trim|required');
+		$this->form_validation->set_rules('jarak', 'Jarak', 'trim|required');
 		$this->form_validation->set_rules('description', 'Deskripsi', 'trim|required');
 		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
 
@@ -99,9 +101,11 @@ class Admin extends CI_Controller
 		$this->form_validation->set_rules('buka', 'Buka', 'trim|required');
 		$this->form_validation->set_rules('tutup', 'Tutup', 'trim|required');
 		$this->form_validation->set_rules('kapasitas', 'Kapasitas', 'trim|required');
+		$this->form_validation->set_rules('harian', 'Pengunjung Harian', 'trim|required');
 		$this->form_validation->set_rules('cp', 'Contact Person', 'trim|required');
 		$this->form_validation->set_rules('latitude', 'Latitude', 'trim|required');
 		$this->form_validation->set_rules('longitude', 'Longitude', 'trim|required');
+		$this->form_validation->set_rules('jarak', 'Jarak', 'trim|required');
 		$this->form_validation->set_rules('description', 'Deskripsi', 'trim|required');
 		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
 

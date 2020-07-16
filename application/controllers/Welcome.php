@@ -19,13 +19,14 @@ class Welcome extends CI_Controller
 		$harga		= $this->input->post('harga');
 		$kapasitas	= $this->input->post('kapasitas');
 		$waktu		= $this->input->post('waktu');
+		$jarak		= $this->input->post('jarak');
 
-		$data['peta_cafe']=$this->Mdata->tampil_cafe($keyword, $jenis, $harga, $kapasitas, $waktu)->result();
-		$data['peta_qsr']=$this->Mdata->tampil_qsr($keyword, $jenis, $harga, $kapasitas, $waktu)->result();
-		$data['peta_bakery']=$this->Mdata->tampil_bakery($keyword, $jenis, $harga, $kapasitas, $waktu)->result();
-		$data['peta_eskrim']=$this->Mdata->tampil_eskrim($keyword, $jenis, $harga, $kapasitas, $waktu)->result();
-		$data['peta_pubs']=$this->Mdata->tampil_pubs($keyword, $jenis, $harga, $kapasitas, $waktu)->result();
-		$data['peta_cdr']=$this->Mdata->tampil_cdr($keyword, $jenis, $harga, $kapasitas, $waktu)->result();
+		$data['peta_cafe']=$this->Mdata->tampil_cafe($keyword, $jenis, $harga, $kapasitas, $waktu, $jarak)->result();
+		$data['peta_qsr']=$this->Mdata->tampil_qsr($keyword, $jenis, $harga, $kapasitas, $waktu, $jarak)->result();
+		$data['peta_bakery']=$this->Mdata->tampil_bakery($keyword, $jenis, $harga, $kapasitas, $waktu, $jarak)->result();
+		$data['peta_eskrim']=$this->Mdata->tampil_eskrim($keyword, $jenis, $harga, $kapasitas, $waktu, $jarak)->result();
+		$data['peta_pubs']=$this->Mdata->tampil_pubs($keyword, $jenis, $harga, $kapasitas, $waktu, $jarak)->result();
+		$data['peta_cdr']=$this->Mdata->tampil_cdr($keyword, $jenis, $harga, $kapasitas, $waktu, $jarak)->result();
 
 		$this->load->view('main-index', $data);
 	}

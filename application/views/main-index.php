@@ -57,7 +57,7 @@
 		</nav>
 		<div class="container-fluid top20px">
 			<div class="row">
-				<div class="col-md-2" style="margin-top: 60px;">
+				<div class="col-md-2" style="margin-top: 100px; overflow-y: auto; overflow-x: hidden; height: 500px;">
 					<?php echo form_open() ?>
 					<div class="form-group">
 						<label for="">Cari :</label>
@@ -75,7 +75,7 @@
 						echo form_input($data);
 						?>
 					</div>
-				<?php if($this->db->get('jenis')->num_rows()) : ?>
+					<?php if($this->db->get('jenis')->num_rows()) : ?>
 					<div class="form-group">
 						<label>Jenis Resto :</label>
 						<?php foreach($this->db->get('jenis')->result() as $row) {
@@ -130,6 +130,20 @@
 					);
 
 					echo form_dropdown('waktu', $waktu, set_value('waktu'), 'class="form-control" id="waktu" style="font-size:14px;"');
+					?>
+				</div>
+				<div class="form-group">
+					<label for="jarak">Jarak dari Pusat Kota :</label>
+					<?php
+					$jarak = array(
+						"" => "- Pilih -",
+						"1" => "<= 2 Km",
+						"2" => "2 s/d 5 Km",
+						"3" => "5 s/d 10 Km",
+						"4" => ">= 10 Km"
+					);
+
+					echo form_dropdown('jarak', $jarak, set_value('jarak'), 'class="form-control" id="jarak" style="font-size:14px;"');
 					?>
 				</div>
 				<div class="form-group col-md-6">

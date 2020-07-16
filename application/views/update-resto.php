@@ -80,6 +80,16 @@ $this->load->view('headerAdmin', $this->data);
             </div>
             <p class="help-block"><?php echo form_error('kapasitas', '<small class="text-red">', '</small>'); ?></p>
         </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Pengunjung Harian :</label>
+        <div class="col-sm-4">
+            <div class="input-group">
+                <input type="number" name="harian" class="form-control" value="<?php echo $resto->PENGUNJUNG_HARIAN ?>" placeholder="Pengujung">
+                <span class="input-group-addon">/ hari</span>
+            </div>
+            <p class="help-block"><?php echo form_error('harian', '<small class="text-red">', '</small>'); ?></p>
+        </div>
     </div>   
     <div class="form-group">
         <label class="col-sm-2 control-label">Contact Person :</label>
@@ -106,6 +116,16 @@ $this->load->view('headerAdmin', $this->data);
                 <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
             </div>
             <p class="help-block"><?php echo form_error('longitude', '<small class="text-red">', '</small>'); ?></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Jarak dari Pusat Kota :</label>
+        <div class="col-sm-4">
+            <div class="input-group">
+                <input type="number" name="jarak" class="form-control" value="<?php echo $resto->JARAK ?>" placeholder="Jarak">
+                <span class="input-group-addon">Km</span>
+            </div>
+            <p class="help-block"><?php echo form_error('jarak', '<small class="text-red">', '</small>'); ?></p>
         </div>
     </div>
     <div class="form-group">
