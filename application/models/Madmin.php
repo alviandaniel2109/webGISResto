@@ -113,6 +113,16 @@ class Madmin extends CI_Model
 		$this->session->set_flashdata('message', "Perubahan berhasil disimpan");
 	}
 
+	public function getDataResto(){
+		$this->db->select('*');
+		$this->db->from('resto');
+		$this->db->join('jenis', 'jenis.ID_JENIS = resto.ID_JENIS');
+
+		$query = $this->db->get();
+
+		return $query->result();
+	}
+
 	public function getAllResto($limit = 10, $offset = 0, $type = 'result')
 	{
 		if( $this->input->get('q') != '')

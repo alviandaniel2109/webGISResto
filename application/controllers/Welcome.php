@@ -8,6 +8,7 @@ class Welcome extends CI_Controller
 		parent::__construct();
 		$this->load->database();
 		$this->load->model('Mdata');
+		$this->load->model('Madmin');
 	}
 
 	public function index()
@@ -29,6 +30,15 @@ class Welcome extends CI_Controller
 		$data['peta_cdr']=$this->Mdata->tampil_cdr($keyword, $jenis, $harga, $kapasitas, $waktu, $jarak)->result();
 
 		$this->load->view('main-index', $data);
+	}
+
+	public function home()
+	{
+
+		$data['title']	= "WEBGIS RESTORAN";
+		$data['resto'] 	= $this->Madmin->getDataResto();
+
+		$this->load->view('home', $data);
 	}
 
 	public function detailResto($id){

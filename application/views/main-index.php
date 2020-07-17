@@ -49,7 +49,8 @@
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="<?php echo base_url() ?>" class="hvr-underline-reveal">Home</a></li>
+						<li><a href="<?php echo base_url('Welcome/home') ?>" class="hvr-underline-reveal">Home</a></li>
+						<li><a href="<?php echo base_url() ?>" class="hvr-underline-reveal">Map</a></li>
 						<li><a  data-toggle="modal" href='#modal-about' class="hvr-underline-reveal">About</a></li>
 					</ul>
 				</div>
